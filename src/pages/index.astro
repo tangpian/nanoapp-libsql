@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+import { db } from '../libsql';
+const { rows } = await db.execute('SELECT 1')
+
+---
+
+<Layout title="Welcome to Astro.">
+	<h1>row: {rows[0][0]}</h1>
+</Layout>
